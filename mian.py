@@ -5,10 +5,10 @@ from rembg import remove # rembgライブラリからremoveっていう機能を
 import io # ioライブラリは、バイトデータを扱うときに使う便利なやつだよ！
 
 # アプリのタイトルを表示するよ！絵文字も使えるの、かわいくない？😍
-st.title("背景けしけし職人さん💖")
+st.title("背景削除アプリくん😶‍🌫️")
 
 # ファイルアップローダーを設置！これで画像をアップロードできるようになるよ✨
-uploaded_file = st.file_uploader("背景を消したい画像をアップロードしてね！📂✨", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("背景を消したい画像をアップロードしてください！📂✨", type=["jpg", "png", "jpeg"])
 
 # もしファイルがアップロードされたら…っていう意味のif文だよ！
 if uploaded_file is not None:
@@ -19,7 +19,7 @@ if uploaded_file is not None:
     st.image(image, caption="アップロードされた画像だよ！📸", use_container_width=True) # ← ここが変わったよ！✨
 
     # 「背景を削除する」ボタンを設置するよ！このボタンが押されたら、背景削除処理が始まるんだ～ワクワク！🥳
-    if st.button("背景をけしけしスタート！✨"):
+    if st.button("背景削除スタート！✨"):
         # st.spinner()を使うと、処理中にくるくるアニメーションが出て、ユーザーに「今がんばってるよ！」って伝えられるの！親切だよね～😉
         with st.spinner("背景をけしけし中…少しまってね！🌀"):
             # uploaded_file.getvalue() で、アップロードされたファイルの中身をバイトデータっていう形式で取り出すよ！
