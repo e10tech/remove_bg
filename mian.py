@@ -1,4 +1,4 @@
-#streamlit用のコード
+# streamlit用のコード
 import streamlit as st
 from PIL import Image # PillowライブラリからImageを読み込むよ！画像操作に使うんだ～
 from rembg import remove # rembgライブラリからremoveっていう機能を借りてくるよ！これが背景消すマン！🦸‍♀️
@@ -59,4 +59,4 @@ if uploaded_file is not None:
             )
 
 else:
-    st.write("ここに画像が表示されるよ！わくわく！🥳")
+    st.write("ここに画像が表示されるよ！ワクワク！🥳")
