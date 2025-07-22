@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 3. アプリケーションを起動:
 ```bash
-streamlit run mian.py
+streamlit run mian.py  # ファイル名は main.py のタイプミスです
 ```
 
 4. ブラウザで http://localhost:8501 にアクセス
@@ -53,6 +53,10 @@ streamlit run mian.py
 2. Dev Container拡張機能がインストールされていることを確認
 3. 「Reopen in Container」を選択
 4. 自動的に環境が構築され、Streamlitサーバーが起動します
+5. `.devcontainer/devcontainer.json` の `postAttachCommand` では開発向けに
+   `--server.enableCORS false --server.enableXsrfProtection false` を付与して
+   Streamlit を起動しています。本番環境ではこれらのオプションを外し、
+   CORS と XSRF 保護を有効にしてください。
 
 ## 🛠 技術スタック
 
@@ -67,7 +71,7 @@ streamlit run mian.py
 ```
 remove_bg/
 ├── README.md           # このファイル
-├── mian.py            # メインアプリケーション
+├── mian.py            # メインアプリケーション (main.py のタイプミス)
 ├── requirements.txt   # 依存パッケージ一覧
 └── .devcontainer/     # Dev Container設定
     └── devcontainer.json
@@ -83,6 +87,8 @@ remove_bg/
 - 初回実行時、AIモデルのダウンロードが行われるため、時間がかかる場合があります
 - 画像サイズが大きい場合、処理に時間がかかることがあります
 - インターネット接続が必要です（モデルダウンロード時）
+- アップロードできる画像は JPG/JPEG/PNG 形式で、サイズは最大 10MB までに制限されています
+- 不正なデータによってアプリが停止しないよう、アップロード処理では例外を適切に処理しています
 
 ## 🤝 貢献
 
